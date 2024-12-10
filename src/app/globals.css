@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "sf-pro-text";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/sf-pro-text_regular.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "sf-pro-text";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./fonts/sf-pro-text_semibold.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "sf-pro-display";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./fonts/sf-pro-display_semibold.woff2) format("woff2");
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "sf-pro-text", Arial, Helvetica, sans-serif;
+}
