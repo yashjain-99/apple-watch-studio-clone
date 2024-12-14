@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { FiChevronDown } from "react-icons/fi";
+import { useCollectionModalStateContext } from "@/context/CollectionModalStateProvider";
 
 interface HeaderProps {
   isIntroPage: boolean;
@@ -13,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({ isIntroPage, isBannerImgLoaded }) => {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
   };
+  const { setIsModalOpen } = useCollectionModalStateContext();
 
   return (
     <header className="absolute top-7 flex justify-between items-center w-full">
@@ -27,8 +30,13 @@ const Header: React.FC<HeaderProps> = ({ isIntroPage, isBannerImgLoaded }) => {
       </Link>
       {!isIntroPage && (
         <>
-          <div className="-translate-x-1/2">
-            <button>Collection</button>
+          <div className="-translate-x-[30%]">
+            <button
+              className="flex items-center"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Collection <FiChevronDown />
+            </button>
           </div>
           <motion.button
             className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-medium mr-5 py-2 px-3 rounded-full border-2 border-transparent cursor-pointer"
