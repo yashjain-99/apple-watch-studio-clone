@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import StateProvider from "@/context/StateProvider";
-import CollectionModalStateProvider from "@/context/CollectionModalStateProvider";
+import FilterStateProvider from "@/context/FilterStateProvider";
 
 export const metadata: Metadata = {
   title: "Create Your Apple Watch Series 10 Style - Apple",
@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StateProvider>
-        <CollectionModalStateProvider>
+        <FilterStateProvider>
           <body>{children}</body>
-        </CollectionModalStateProvider>
+        </FilterStateProvider>
       </StateProvider>
     </html>
   );

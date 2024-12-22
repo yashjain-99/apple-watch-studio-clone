@@ -7,3 +7,5 @@ type Size = keyof typeof SIZE;
 type Case = keyof typeof CASE;
 
 type Band = keyof typeof BAND;
+
+type Filter = "collection" | "size" | "case" | "band";

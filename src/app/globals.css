@@ -36,3 +36,22 @@ body {
   background: var(--background);
   font-family: "sf-pro-text", Arial, Helvetica, sans-serif;
 }
+
+.open-animation {
+  animation: openFilter 1.1s ease 1 forwards;
+  overflow: hidden;
+}
+
+@keyframes openFilter {
+  0% {
+    max-width: 34px;
+  }
+
+  95% {
+    max-width: 500px;
+  }
+
+  100% {
+    overflow: visible;
+  }
+}

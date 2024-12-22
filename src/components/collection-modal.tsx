@@ -1,5 +1,5 @@
 import { COLLECTION, DEFAULTS } from "@/constants";
-import { useCollectionModalStateContext } from "@/context/CollectionModalStateProvider";
+import { useFilterStateContext } from "@/context/FilterStateProvider";
 import {
   setBand,
   setCase,
@@ -7,7 +7,6 @@ import {
   setSize,
   useStateContext,
 } from "@/context/StateProvider";
-import { useRouter } from "next/navigation";
 import React from "react";
 import Modal from "react-modal";
 
@@ -36,11 +35,10 @@ const customStyles = {
 Modal.setAppElement("#main");
 
 const CollectionModal = () => {
-  const { isModalOpen, setIsModalOpen } = useCollectionModalStateContext();
+  const { openFilter, setOpenFilter } = useFilterStateContext();
   const { state, dispatch } = useStateContext();
-  const router = useRouter();
   const closeModal = () => {
-    setIsModalOpen(false);
+    setOpenFilter(undefined);
   };
 
   const handleCollectionChange = (collection: CollectionType) => {
@@ -55,7 +53,7 @@ const CollectionModal = () => {
   return (
     <div>
       <Modal
-        isOpen={isModalOpen}
+        isOpen={openFilter === "collection"}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Select collection"

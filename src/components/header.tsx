@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
-import { useCollectionModalStateContext } from "@/context/CollectionModalStateProvider";
+import { useFilterStateContext } from "@/context/FilterStateProvider";
 
 interface HeaderProps {
   isIntroPage: boolean;
@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ isIntroPage, isBannerImgLoaded }) => {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
   };
-  const { setIsModalOpen } = useCollectionModalStateContext();
+  const { setOpenFilter } = useFilterStateContext();
 
   return (
     <header className="absolute top-7 flex justify-between items-center w-full">
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ isIntroPage, isBannerImgLoaded }) => {
           <div className="-translate-x-[30%]">
             <button
               className="flex items-center"
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => setOpenFilter("collection")}
             >
               Collection <FiChevronDown />
             </button>
