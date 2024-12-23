@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import StateProvider from "@/context/StateProvider";
 import FilterStateProvider from "@/context/FilterStateProvider";
+import SwiperInstanceProvider from "@/context/SwiperInstanceProvider";
 
 export const metadata: Metadata = {
   title: "Create Your Apple Watch Series 10 Style - Apple",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <StateProvider>
         <FilterStateProvider>
-          <body>{children}</body>
+          <SwiperInstanceProvider>
+            <body>{children}</body>
+          </SwiperInstanceProvider>
         </FilterStateProvider>
       </StateProvider>
     </html>

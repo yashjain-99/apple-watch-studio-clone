@@ -2,6 +2,7 @@ import { useFilterStateContext } from "@/context/FilterStateProvider";
 import React from "react";
 import { Filter } from "../..";
 import { FILTER_ICON } from "@/constants";
+import { useSwiperInstanceContext } from "@/context/SwiperInstanceProvider";
 
 interface FilterSelectorProps {
   type: Filter;
@@ -21,6 +22,7 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
   onFilterChange,
 }) => {
   const { openFilter, setOpenFilter } = useFilterStateContext();
+  const { swiperInstance } = useSwiperInstanceContext();
 
   return (
     <div
@@ -33,10 +35,13 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
         <button>{label}</button>
       ) : (
         <ul className="flex gap-3 open-animation">
-          {options.map((option) => (
+          {options.map((option, index) => (
             <li
               key={option}
-              onClick={() => onFilterChange(option)}
+              onClick={() => {
+                onFilterChange(option);
+                swiperInstance?.slideTo(index);
+              }}
               className={`${option === selectedFilter ? "font-bold" : ""}`}
             >
               {optionLabel[option]}

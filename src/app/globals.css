@@ -52,6 +52,18 @@ body {
   }
 
   100% {
+    max-width: fit-content;
     overflow: visible;
   }
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-wrapper {
+  margin-right: 71.875rem;
 }

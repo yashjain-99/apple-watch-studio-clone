@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import { useStateContext } from "@/context/StateProvider";
 import { COLLECTION } from "@/constants";
 import { getData } from "@/utils";
+import { useFilterStateContext } from "@/context/FilterStateProvider";
+import Carousel from "./carousel";
 
 interface InfoProps {
   isBannerImgLoaded: boolean;
@@ -15,6 +16,7 @@ const Info: React.FC<InfoProps> = ({
   setIsBannerImgLoaded,
 }) => {
   const { state } = useStateContext();
+  const { openFilter } = useFilterStateContext();
   const [animationVariant, setAnimationVariant] = useState<Variants>({
     initial: { y: 512, scale: 2 },
     animate: { y: 0, scale: 1 },
@@ -40,33 +42,20 @@ const Info: React.FC<InfoProps> = ({
     <div className="relative top-[82px] text-center flex flex-col items-center">
       <motion.div
         id="bannerImg"
-        key={`${state.selectedCollection}`}
+        key={`${openFilter}`}
         initial="initial"
         animate="animate"
         variants={animationVariant}
         viewport={{ amount: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         onAnimationComplete={() => setIsBannerImgLoaded(true)}
-        className="relative h-[53vh] max-h-[29rem] min-h-[18rem] max-w-[29rem] min-w-[18rem] w-[52vh]"
+        className="relative h-[53vh] w-full flex justify-center"
       >
-        <Image
-          src={data.CASE_IMG}
-          width={500}
-          height={500}
-          alt="Watch Case"
-          className="block absolute z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
-        />
-        <Image
-          src={data.BAND_IMG}
-          width={500}
-          height={500}
-          alt="Watch band"
-          className="block absolute ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
-        />
+        <Carousel />
       </motion.div>
       {isBannerImgLoaded && (
         <motion.div
-          className="pt-[2vh] w-[60%]"
+          className="pt-[2vh]"
           id="bannerInfo"
           key={`Info_${state.selectedCollection}`}
           initial={{ opacity: 0 }}
