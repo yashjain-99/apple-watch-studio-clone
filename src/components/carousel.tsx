@@ -6,9 +6,18 @@ import { Mousewheel, Navigation } from "swiper/modules";
 import Image from "next/image";
 import useCarouselData from "@/hooks/useCarouselData";
 import { useSwiperInstanceContext } from "@/context/SwiperInstanceProvider";
+import {
+  setBand,
+  setCase,
+  setSize,
+  useStateContext,
+} from "@/context/StateProvider";
+import { useFilterStateContext } from "@/context/FilterStateProvider";
 
 export default function Carousel() {
   const { data, selectedIndex } = useCarouselData();
+  const { dispatch } = useStateContext();
+  const { openFilter } = useFilterStateContext();
   const { setSwiperInstance } = useSwiperInstanceContext();
 
   return (
@@ -22,6 +31,20 @@ export default function Carousel() {
         modules={[Mousewheel, Navigation]}
         onSwiper={(swiper) => {
           setSwiperInstance(swiper);
+        }}
+        onActiveIndexChange={(swiper) => {
+          if (openFilter === "size") {
+            const newSize = data[swiper.activeIndex].SIZE;
+            setSize(dispatch, newSize);
+          }
+          if (openFilter === "band") {
+            const newBand = data[swiper.activeIndex].BAND;
+            setBand(dispatch, newBand);
+          }
+          if (openFilter === "case") {
+            const newCase = data[swiper.activeIndex].CASE;
+            setCase(dispatch, newCase);
+          }
         }}
         className=" h-full w-full mr-12 -translate-x-[2%]"
       >
