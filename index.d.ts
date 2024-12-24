@@ -18,6 +18,7 @@ interface ProductDetails {
   SIZE: Size;
   CASE: Case;
   BAND: Band;
+  COLLECTION: Collection;
 }
 
 type CollectionSizeCaseBandData = Partial<

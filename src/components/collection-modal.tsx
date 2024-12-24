@@ -7,7 +7,8 @@ import {
   setSize,
   useStateContext,
 } from "@/context/StateProvider";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useCallback } from "react";
 import Modal from "react-modal";
 
 type CollectionType = keyof typeof COLLECTION;
@@ -37,13 +38,21 @@ Modal.setAppElement("#main");
 const CollectionModal = () => {
   const { openFilter, setOpenFilter } = useFilterStateContext();
   const { state, dispatch } = useStateContext();
+  const router = useRouter();
+  const pathname = usePathname();
+  const createQueryString = useCallback((name: string, value: string) => {
+    const params = new URLSearchParams();
+    params.set(name, value);
+
+    return params.toString();
+  }, []);
   const closeModal = () => {
     setOpenFilter(undefined);
   };
 
   const handleCollectionChange = (collection: CollectionType) => {
-    console.log(collection);
     setCollection(dispatch, collection);
+    router.push(pathname + "?" + createQueryString("collection", collection));
     setCase(dispatch, DEFAULTS[collection]["CASE"]);
     setSize(dispatch, DEFAULTS[collection]["SIZE"]);
     setBand(dispatch, DEFAULTS[collection]["BAND"]);

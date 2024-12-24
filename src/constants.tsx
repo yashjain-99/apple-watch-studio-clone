@@ -117,6 +117,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Solo_Loop",
+          COLLECTION: "BASE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -128,6 +129,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Fine_Woven",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -139,6 +141,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "BASE",
         },
         Braided_Solo_Loop: {
           CASE_IMG:
@@ -150,6 +153,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "BASE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -161,6 +165,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Sport_Band",
+          COLLECTION: "BASE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -172,6 +177,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Sport_Loop",
+          COLLECTION: "BASE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -183,6 +189,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Stainless_Steel",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -195,6 +202,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "BASE",
         },
       },
       Titanium: {
@@ -208,6 +216,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "BASE",
         },
         Solo_Loop: {
           CASE_IMG:
@@ -219,6 +228,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Solo_Loop",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -230,6 +240,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -241,6 +252,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "BASE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -252,6 +264,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Fine_Woven",
+          COLLECTION: "BASE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -263,6 +276,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Sport_Band",
+          COLLECTION: "BASE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -274,6 +288,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Sport_Loop",
+          COLLECTION: "BASE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -285,6 +300,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Stainless_Steel",
+          COLLECTION: "BASE",
         },
       },
     },
@@ -301,6 +317,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "BASE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -312,6 +329,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Fine_Woven",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -323,6 +341,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -335,6 +354,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "BASE",
         },
         Solo_Loop: {
           CASE_IMG:
@@ -346,6 +366,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Solo_Loop",
+          COLLECTION: "BASE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -357,6 +378,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Sport_Band",
+          COLLECTION: "BASE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -368,6 +390,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Sport_Loop",
+          COLLECTION: "BASE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -379,6 +402,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Aluminium",
           BAND: "Stainless_Steel",
+          COLLECTION: "BASE",
         },
       },
       Titanium: {
@@ -392,6 +416,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "BASE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -403,6 +428,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Fine_Woven",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -414,6 +440,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "BASE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -425,6 +452,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "BASE",
         },
         Solo_Loop: {
           CASE_IMG:
@@ -436,6 +464,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Solo_Loop",
+          COLLECTION: "BASE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -447,6 +476,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Sport_Band",
+          COLLECTION: "BASE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -458,6 +488,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Sport_Loop",
+          COLLECTION: "BASE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -469,6 +500,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Stainless_Steel",
+          COLLECTION: "BASE",
         },
       },
     },
@@ -486,10 +518,11 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Hermes_Toile_H",
+          COLLECTION: "HERMES",
         },
         Hermes_Torsade: {
           CASE_IMG:
-            "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK13_VW_PF?wid=1000&hei=1000&fmt=p-jpg&qlt=95&.v=dWNmV2ZYQlVibC85Wi9lVGdvNit1SXduOFMvbmVQTFhMVFZ1Tkw2anFlWFpLTDlBenJjeUgxUWRMYy82UUdzb3YwNHhaZm1nVTBYVTB1d1VzUXF1eWc",
+            "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-titanium-silver-cell-hermes10s_VW_PF+watch-face-42-radial-vert-moyen-hermes10s_VW_PF?wid=1000&hei=1000&fmt=png-alpha&.v=MWF5bnRSQ0xkL2IyaVkvcXV5Rmd4bG5hMEpjdElDRys4YVlISkd5ZGNjQXZVbHhMQjlTM3ZKa2hEWWUrdm8yaFZNbGZBblNteUNpL1hVRWxOUWExdTRHYmgzSHo0NktRTFVWL3pFQkRoT1crRGk5MmpzUmxkQ0FOcGVOeDZMS3VoYUIvcS81Uzh1S3A2OG5CTUpFTmJSYlIwRlhSM2p5aW1wajBxM1pnY1RlaFpZdXV1WUZ3bys4VFhRM1BaekJmSkxRMDFxdWhkVHF2b2V1QmtUTVdzUQ",
           BAND_IMG:
             "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK13_VW_PF?wid=1000&hei=1000&fmt=p-jpg&qlt=95&.v=dWNmV2ZYQlVibC85Wi9lVGdvNit1SXduOFMvbmVQTFhMVFZ1Tkw2anFlWFpLTDlBenJjeUgxUWRMYy82UUdzb3YwNHhaZm1nVTBYVTB1d1VzUXF1eWc",
           PRICE: "$1,349.00",
@@ -498,6 +531,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Hermes_Torsade",
+          COLLECTION: "HERMES",
         },
         Hermes_Kilim: {
           CASE_IMG:
@@ -509,6 +543,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Hermes_Kilim",
+          COLLECTION: "HERMES",
         },
         Hermes_Grand_H: {
           CASE_IMG:
@@ -520,6 +555,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "42",
           CASE: "Titanium",
           BAND: "Hermes_Grand_H",
+          COLLECTION: "HERMES",
         },
       },
     },
@@ -535,6 +571,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Hermes_Toile_H",
+          COLLECTION: "HERMES",
         },
         Hermes_Torsade: {
           CASE_IMG:
@@ -546,6 +583,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Hermes_Torsade",
+          COLLECTION: "HERMES",
         },
         Hermes_Kilim: {
           CASE_IMG:
@@ -557,6 +595,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Hermes_Kilim",
+          COLLECTION: "HERMES",
         },
         Hermes_Grand_H: {
           CASE_IMG:
@@ -568,6 +607,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "46",
           CASE: "Titanium",
           BAND: "Hermes_Grand_H",
+          COLLECTION: "HERMES",
         },
       },
     },
@@ -585,6 +625,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "SE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -596,6 +637,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Fine_Woven",
+          COLLECTION: "SE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -607,6 +649,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "SE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -618,6 +661,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "SE",
         },
         Solo_Loop: {
           CASE_IMG:
@@ -629,6 +673,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Solo_Loop",
+          COLLECTION: "SE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -640,6 +685,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Sport_Band",
+          COLLECTION: "SE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -651,6 +697,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Sport_Loop",
+          COLLECTION: "SE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -662,6 +709,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "40",
           CASE: "Aluminium",
           BAND: "Stainless_Steel",
+          COLLECTION: "SE",
         },
       },
     },
@@ -677,6 +725,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Braided_Solo_Loop",
+          COLLECTION: "SE",
         },
         Fine_Woven: {
           CASE_IMG:
@@ -688,6 +737,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Fine_Woven",
+          COLLECTION: "SE",
         },
         Nike_Sport_Band: {
           CASE_IMG:
@@ -699,6 +749,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Band",
+          COLLECTION: "SE",
         },
         Nike_Sport_Loop: {
           CASE_IMG:
@@ -710,6 +761,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Nike_Sport_Loop",
+          COLLECTION: "SE",
         },
         Solo_Loop: {
           CASE_IMG:
@@ -721,6 +773,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Solo_Loop",
+          COLLECTION: "SE",
         },
         Sport_Band: {
           CASE_IMG:
@@ -732,6 +785,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Sport_Band",
+          COLLECTION: "SE",
         },
         Sport_Loop: {
           CASE_IMG:
@@ -743,6 +797,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Sport_Loop",
+          COLLECTION: "SE",
         },
         Stainless_Steel: {
           CASE_IMG:
@@ -754,6 +809,7 @@ export const DATA_STORE: DataStore = {
           SIZE: "44",
           CASE: "Aluminium",
           BAND: "Stainless_Steel",
+          COLLECTION: "SE",
         },
       },
     },

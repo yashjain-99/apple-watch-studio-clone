@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion";
+import React, { useMemo } from "react";
+import { motion } from "framer-motion";
 import { useStateContext } from "@/context/StateProvider";
 import { COLLECTION } from "@/constants";
 import { getData } from "@/utils";
@@ -17,32 +17,30 @@ const Info: React.FC<InfoProps> = ({
 }) => {
   const { state } = useStateContext();
   const { openFilter } = useFilterStateContext();
-  const [animationVariant, setAnimationVariant] = useState<Variants>({
-    initial: { y: 512, scale: 2 },
-    animate: { y: 0, scale: 1 },
-  });
 
-  const data = getData(
-    state.selectedCollection!,
-    state.selectedSize!,
-    state.selectedCase!,
-    state.selectedBand!
-  )!;
+  const data = useMemo(() => {
+    return getData(
+      state.selectedCollection!,
+      state.selectedSize!,
+      state.selectedCase!,
+      state.selectedBand!
+    )!;
+  }, [
+    state.selectedCollection,
+    state.selectedSize,
+    state.selectedCase,
+    state.selectedBand,
+  ]);
 
-  useEffect(() => {
-    if (isBannerImgLoaded) {
-      setAnimationVariant({
-        initial: { opacity: 0 },
-        animate: { opacity: 1 },
-      });
-    }
-  }, [isBannerImgLoaded]);
+  const animationVariant = isBannerImgLoaded
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 } }
+    : { initial: { y: 512, scale: 2 }, animate: { y: 0, scale: 1 } };
 
   return (
     <div className="relative top-[82px] text-center flex flex-col items-center">
       <motion.div
         id="bannerImg"
-        key={`${openFilter}`}
+        key={openFilter}
         initial="initial"
         animate="animate"
         variants={animationVariant}
@@ -53,11 +51,11 @@ const Info: React.FC<InfoProps> = ({
       >
         <Carousel />
       </motion.div>
+
       {isBannerImgLoaded && (
         <motion.div
           className="pt-[2vh]"
           id="bannerInfo"
-          key={`Info_${state.selectedCollection}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           viewport={{ once: true, amount: 0 }}
@@ -68,14 +66,16 @@ const Info: React.FC<InfoProps> = ({
           </button>
           <div>
             <span className="block text-[#86868b] font-semibold mb-1 text-xs tracking-[-0.01em] leading-5">
-              {`${COLLECTION[state.selectedCollection!]}`}
+              {COLLECTION[state.selectedCollection!]}
             </span>
             <span className="block font-semibold mb-1 text-xs tracking-[-0.01em] leading-5">
-              {`${data.LABEL}`}
+              {data.LABEL}
             </span>
             <div className="block text-sm tracking-[-0.016em] leading-6">
               <span>From </span>
-              <span className="inline-block whitespace-nowrap">{`${data.PRICE}`}</span>
+              <span className="inline-block whitespace-nowrap">
+                {data.PRICE}
+              </span>
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Header from "@/components/header";
 import Intro from "@/components/intro";
 import Info from "@/components/info";
@@ -13,18 +13,44 @@ import {
   setSize,
   useStateContext,
 } from "@/context/StateProvider";
+import { useSearchParams } from "next/navigation";
+import { getData } from "@/utils";
+import { Band, Case, Collection, Size } from "../..";
 
 export default function Home() {
   const [isIntroPage, setIsIntroPage] = useState<boolean>(true);
   const [isBannerImgLoaded, setIsBannerImgLoaded] = useState<boolean>(false);
   const { dispatch } = useStateContext();
+  const searchParams = useSearchParams();
+
+  const updateStateFromParams = useCallback(() => {
+    const { collection, size, caseType, band } = Object.fromEntries(
+      searchParams.entries()
+    );
+
+    if (collection || size || caseType || band) {
+      setIsIntroPage(false);
+      setIsBannerImgLoaded(true);
+    }
+
+    const data = getData(
+      collection as Collection,
+      size as Size,
+      caseType as Case,
+      band as Band
+    );
+
+    if (data) {
+      setCollection(dispatch, data.COLLECTION);
+      setSize(dispatch, data.SIZE);
+      setCase(dispatch, data.CASE);
+      setBand(dispatch, data.BAND);
+    }
+  }, [searchParams, dispatch]);
 
   useEffect(() => {
-    setCollection(dispatch, "BASE");
-    setSize(dispatch, "46");
-    setCase(dispatch, "Aluminium");
-    setBand(dispatch, "Solo_Loop");
-  }, []);
+    updateStateFromParams();
+  }, [searchParams, updateStateFromParams]);
 
   return (
     <main
@@ -32,14 +58,17 @@ export default function Home() {
       id="main"
     >
       <Header isBannerImgLoaded={isBannerImgLoaded} isIntroPage={isIntroPage} />
-      {isIntroPage && <Intro setIsIntroPage={setIsIntroPage} />}
-      {!isIntroPage && (
-        <Info
-          isBannerImgLoaded={isBannerImgLoaded}
-          setIsBannerImgLoaded={setIsBannerImgLoaded}
-        />
+      {isIntroPage ? (
+        <Intro setIsIntroPage={setIsIntroPage} />
+      ) : (
+        <>
+          <Info
+            isBannerImgLoaded={isBannerImgLoaded}
+            setIsBannerImgLoaded={setIsBannerImgLoaded}
+          />
+          {isBannerImgLoaded && <Footer />}
+        </>
       )}
-      {!isIntroPage && isBannerImgLoaded && <Footer />}
       <CollectionModal />
     </main>
   );

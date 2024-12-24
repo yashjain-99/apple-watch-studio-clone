@@ -1,8 +1,9 @@
 import { useFilterStateContext } from "@/context/FilterStateProvider";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { Filter } from "../..";
 import { FILTER_ICON } from "@/constants";
 import { useSwiperInstanceContext } from "@/context/SwiperInstanceProvider";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface FilterSelectorProps {
   type: Filter;
@@ -21,6 +22,25 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
 }) => {
   const { openFilter, setOpenFilter } = useFilterStateContext();
   const { swiperInstance } = useSwiperInstanceContext();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  useEffect(() => {
+    if (openFilter) {
+      const queryString = createQueryString(type, selectedFilter);
+      router.push(`${pathname}?${queryString}`);
+    }
+  }, [selectedFilter, openFilter, createQueryString, router, pathname, type]);
 
   return (
     <div
