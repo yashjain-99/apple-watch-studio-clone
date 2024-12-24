@@ -33,7 +33,7 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#main");
+Modal.setAppElement("#root");
 
 const CollectionModal = () => {
   const { openFilter, setOpenFilter } = useFilterStateContext();

@@ -46,11 +46,11 @@ const Main = () => {
       setCase(dispatch, data.CASE);
       setBand(dispatch, data.BAND);
     }
-  }, [searchParams, dispatch]);
+  }, []);
 
   useEffect(() => {
     updateStateFromParams();
-  }, [searchParams, updateStateFromParams]);
+  }, []);
   return (
     <main
       className="relative h-screen min-h-9 min-w-[400px] overflow-x-hidden overflow-y-scroll"

@@ -40,7 +40,7 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
       const queryString = createQueryString(type, selectedFilter);
       router.push(`${pathname}?${queryString}`);
     }
-  }, [selectedFilter, openFilter, createQueryString, router, pathname, type]);
+  }, [selectedFilter]);
 
   return (
     <div
