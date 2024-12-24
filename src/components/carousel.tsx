@@ -15,7 +15,7 @@ import {
 import { useFilterStateContext } from "@/context/FilterStateProvider";
 
 export default function Carousel() {
-  const { data, selectedIndex } = useCarouselData();
+  const { data, selectedIndex } = useCarouselData()!;
   const { dispatch } = useStateContext();
   const { openFilter } = useFilterStateContext();
   const { setSwiperInstance } = useSwiperInstanceContext();
@@ -34,15 +34,15 @@ export default function Carousel() {
         }}
         onActiveIndexChange={(swiper) => {
           if (openFilter === "size") {
-            const newSize = data[swiper.activeIndex].SIZE;
+            const newSize = data[swiper.activeIndex].SIZE!;
             setSize(dispatch, newSize);
           }
           if (openFilter === "band") {
-            const newBand = data[swiper.activeIndex].BAND;
+            const newBand = data[swiper.activeIndex].BAND!;
             setBand(dispatch, newBand);
           }
           if (openFilter === "case") {
-            const newCase = data[swiper.activeIndex].CASE;
+            const newCase = data[swiper.activeIndex].CASE!;
             setCase(dispatch, newCase);
           }
         }}
@@ -52,7 +52,7 @@ export default function Carousel() {
           <SwiperSlide key={item.id}>
             {openFilter != "band" && (
               <Image
-                src={item.CASE_IMG}
+                src={item.CASE_IMG!}
                 width={500}
                 height={500}
                 alt="Watch Case"
@@ -61,7 +61,7 @@ export default function Carousel() {
             )}
             {openFilter != "case" && (
               <Image
-                src={item.BAND_IMG}
+                src={item.BAND_IMG!}
                 width={500}
                 height={500}
                 alt="Watch band"
@@ -72,7 +72,7 @@ export default function Carousel() {
         ))}
         {openFilter == "band" && (
           <Image
-            src={data[selectedIndex].CASE_IMG}
+            src={data[selectedIndex].CASE_IMG!}
             width={500}
             height={500}
             alt="Watch Case"
@@ -82,7 +82,7 @@ export default function Carousel() {
         {openFilter == "case" && (
           <>
             <Image
-              src={data[selectedIndex].BAND_IMG}
+              src={data[selectedIndex].BAND_IMG!}
               width={500}
               height={500}
               alt="Watch band"

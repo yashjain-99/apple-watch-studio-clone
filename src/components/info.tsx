@@ -23,11 +23,11 @@ const Info: React.FC<InfoProps> = ({
   });
 
   const data = getData(
-    state.selectedCollection,
-    state.selectedSize,
-    state.selectedCase,
-    state.selectedBand
-  );
+    state.selectedCollection!,
+    state.selectedSize!,
+    state.selectedCase!,
+    state.selectedBand!
+  )!;
 
   useEffect(() => {
     if (isBannerImgLoaded) {

@@ -15,10 +15,10 @@ const useCarouselData = () => {
         return {
           id: index,
           ...getData(
-            state.selectedCollection,
+            state.selectedCollection!,
             size,
-            state.selectedCase,
-            state.selectedBand
+            state.selectedCase!,
+            state.selectedBand!
           ),
         };
       });
@@ -32,10 +32,10 @@ const useCarouselData = () => {
         return {
           id: index,
           ...getData(
-            state.selectedCollection,
-            state.selectedSize,
+            state.selectedCollection!,
+            state.selectedSize!,
             value,
-            state.selectedBand
+            state.selectedBand!
           ),
         };
       });
@@ -49,9 +49,9 @@ const useCarouselData = () => {
         return {
           id: index,
           ...getData(
-            state.selectedCollection,
-            state.selectedSize,
-            state.selectedCase,
+            state.selectedCollection!,
+            state.selectedSize!,
+            state.selectedCase!,
             value
           ),
         };
@@ -63,10 +63,10 @@ const useCarouselData = () => {
       {
         id: 1,
         ...getData(
-          state.selectedCollection,
-          state.selectedSize,
-          state.selectedCase,
-          state.selectedBand
+          state.selectedCollection!,
+          state.selectedSize!,
+          state.selectedCase!,
+          state.selectedBand!
         ),
       },
     ];

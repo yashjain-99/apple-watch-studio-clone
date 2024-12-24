@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Band, Case, Collection, Filter, Size } from "..";
+import { Band, Case, Collection, DataStore, Filter, Size } from "..";
 
 export const COLLECTION = Object.freeze({
   BASE: "Apple Watch Series 10",
@@ -102,22 +102,6 @@ export const DEFAULTS: Record<Collection, DefaultConfig> = {
     BAND: "Solo_Loop",
   },
 };
-
-interface ProductDetails {
-  CASE_IMG: string;
-  BAND_IMG: string;
-  PRICE: string;
-  LABEL?: string;
-  SIZE: Size;
-  CASE: Case;
-  BAND: Band;
-}
-
-type CollectionSizeCaseBandData = Partial<
-  Record<Size, Partial<Record<Case, Partial<Record<Band, ProductDetails>>>>>
->;
-
-export type DataStore = Record<Collection, CollectionSizeCaseBandData>;
 
 export const DATA_STORE: DataStore = {
   BASE: {

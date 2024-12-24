@@ -1,20 +1,32 @@
-import { DATA_STORE } from "./constants";
+import { Band, Case, Collection, ProductDetails, Size } from "..";
+import { DATA_STORE, DEFAULTS } from "./constants";
 
 export const getData = (
-  selectedCollection,
-  selectedSize,
-  selectedCase,
-  selectedBand
-) => {
-  if (selectedCollection && selectedSize && selectedCase && selectedBand) {
-    return DATA_STORE[selectedCollection][selectedSize][selectedCase][
-      selectedBand
-    ];
+  selectedCollection: Collection,
+  selectedSize: Size,
+  selectedCase: Case,
+  selectedBand: Band
+): ProductDetails | undefined => {
+  let collection = selectedCollection ?? "BASE";
+  let size = selectedSize ?? "46";
+  let Case = selectedCase ?? "Aluminium";
+  let band = selectedBand ?? "Solo_Loop";
+  if (!DATA_STORE[collection]) {
+    collection = "BASE";
+  }
+  if (!DATA_STORE[collection][size]) {
+    size = DEFAULTS[collection].SIZE;
+  }
+  if (!DATA_STORE[collection][size]?.[Case]) {
+    Case = DEFAULTS[collection].CASE;
+  }
+  if (!DATA_STORE[collection][size]?.[Case]?.[band]) {
+    band = DEFAULTS[collection].BAND;
+  }
+
+  if (DATA_STORE[collection][size]?.[Case]?.[band]) {
+    return DATA_STORE[collection][size]?.[Case]?.[band];
   } else {
-    if (DATA_STORE["BASE"]["46"]) {
-      if (DATA_STORE["BASE"]["46"]["Aluminium"]) {
-        return DATA_STORE["BASE"]["46"]["Aluminium"]["Solo_Loop"];
-      }
-    }
+    return DATA_STORE["BASE"]["46"]?.["Aluminium"]?.["Solo_Loop"];
   }
 };
