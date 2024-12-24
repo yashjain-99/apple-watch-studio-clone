@@ -10,7 +10,6 @@ interface FilterSelectorProps {
   selectedFilter: string;
   options: string[];
   optionLabel: Record<string, string>;
-  onFilterChange: (option: string) => void;
 }
 
 const FilterSelector: React.FC<FilterSelectorProps> = ({
@@ -19,7 +18,6 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
   selectedFilter,
   options,
   optionLabel,
-  onFilterChange,
 }) => {
   const { openFilter, setOpenFilter } = useFilterStateContext();
   const { swiperInstance } = useSwiperInstanceContext();
@@ -39,7 +37,6 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
             <li
               key={option}
               onClick={() => {
-                onFilterChange(option);
                 swiperInstance?.slideTo(index);
               }}
               className={`${option === selectedFilter ? "font-bold" : ""}`}

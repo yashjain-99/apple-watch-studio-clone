@@ -50,22 +50,46 @@ export default function Carousel() {
       >
         {data?.map((item) => (
           <SwiperSlide key={item.id}>
+            {openFilter != "band" && (
+              <Image
+                src={item.CASE_IMG}
+                width={500}
+                height={500}
+                alt="Watch Case"
+                className="block absolute z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
+              />
+            )}
+            {openFilter != "case" && (
+              <Image
+                src={item.BAND_IMG}
+                width={500}
+                height={500}
+                alt="Watch band"
+                className="block absolute ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
+              />
+            )}
+          </SwiperSlide>
+        ))}
+        {openFilter == "band" && (
+          <Image
+            src={data[selectedIndex].CASE_IMG}
+            width={500}
+            height={500}
+            alt="Watch Case"
+            className="block absolute z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh] top-0 left-[38.4%]"
+          />
+        )}
+        {openFilter == "case" && (
+          <>
             <Image
-              src={item.CASE_IMG}
-              width={500}
-              height={500}
-              alt="Watch Case"
-              className="block absolute z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
-            />
-            <Image
-              src={item.BAND_IMG}
+              src={data[selectedIndex].BAND_IMG}
               width={500}
               height={500}
               alt="Watch band"
-              className="block absolute ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
+              className="block absolute ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh] top-0 left-[38.4%]"
             />
-          </SwiperSlide>
-        ))}
+          </>
+        )}
       </Swiper>
     </>
   );
