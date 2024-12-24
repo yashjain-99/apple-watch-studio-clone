@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
 import { useFilterStateContext } from "@/context/FilterStateProvider";
+import toast from "react-hot-toast";
 
 interface HeaderProps {
   isIntroPage: boolean;
@@ -46,6 +47,7 @@ const Header: React.FC<HeaderProps> = ({ isIntroPage, isBannerImgLoaded }) => {
             animate={isBannerImgLoaded ? "animate" : undefined}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            onClick={() => toast.success("Saved successfully")}
           >
             <span>Save</span>
           </motion.button>

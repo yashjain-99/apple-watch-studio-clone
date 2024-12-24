@@ -16,6 +16,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import { getData } from "@/utils";
 import { Band, Case, Collection, Size } from "../..";
+import { Toaster } from "react-hot-toast";
 
 const Main = () => {
   const [isIntroPage, setIsIntroPage] = useState<boolean>(true);
@@ -69,6 +70,7 @@ const Main = () => {
         </>
       )}
       <CollectionModal />
+      <Toaster />
     </main>
   );
 };
