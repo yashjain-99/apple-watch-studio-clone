@@ -37,7 +37,7 @@ const Info: React.FC<InfoProps> = ({
     : { initial: { y: 512, scale: 2 }, animate: { y: 0, scale: 1 } };
 
   return (
-    <div className="relative top-[82px] text-center flex flex-col items-center">
+    <div className="relative top-[5rem] text-center flex flex-col items-center">
       <motion.div
         id="bannerImg"
         key={openFilter}

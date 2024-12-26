@@ -46,10 +46,10 @@ export default function Carousel() {
             setCase(dispatch, newCase);
           }
         }}
-        className=" h-full w-full mr-12 -translate-x-[2%]"
+        className=" h-full w-full"
       >
         {data?.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} className="!flex">
             {openFilter != "band" && (
               <Image
                 src={item.CASE_IMG!}
@@ -70,26 +70,28 @@ export default function Carousel() {
             )}
           </SwiperSlide>
         ))}
-        {openFilter == "band" && (
-          <Image
-            src={data[selectedIndex].CASE_IMG!}
-            width={500}
-            height={500}
-            alt="Watch Case"
-            className="block absolute z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh] top-0 left-[38.4%]"
-          />
-        )}
-        {openFilter == "case" && (
-          <>
+        <div className="absolute top-0 flex justify-center items-center h-full w-full">
+          {openFilter == "band" && (
             <Image
-              src={data[selectedIndex].BAND_IMG!}
+              src={data[selectedIndex].CASE_IMG!}
               width={500}
               height={500}
-              alt="Watch band"
-              className="block absolute ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh] top-0 left-[38.4%]"
+              alt="Watch Case"
+              className="z-10 ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
             />
-          </>
-        )}
+          )}
+          {openFilter == "case" && (
+            <>
+              <Image
+                src={data[selectedIndex].BAND_IMG!}
+                width={500}
+                height={500}
+                alt="Watch band"
+                className="ms-0 h-auto max-w-[29rem] min-w-[18rem] w-[52vh]"
+              />
+            </>
+          )}
+        </div>
       </Swiper>
     </>
   );
